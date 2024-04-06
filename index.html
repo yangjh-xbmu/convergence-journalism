@@ -16,21 +16,12 @@
     }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    /* CSS for syntax highlighting */
+    ul.task-list{list-style: none;}
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -41,7 +32,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -519,27 +510,27 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 <section id="自定义短代码" class="title-slide slide level3">
 <h3>自定义短代码</h3>
 <div class="sourceCode" id="cb4"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.meta-media</span> {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">height</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">75</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">margin-bottom</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">display</span>: <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">height</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">padding-bottom</span>: <span class="dv">75</span><span class="dt">%</span><span class="op">;</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.video</span> {</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="kw">left</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">top</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">height</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="kw">left</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">top</span>: <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;meta-media&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;{{ .Get &quot;</span><span class="ot">src</span><span class="er">&quot;</span><span class="ot"> </span><span class="er">}}&amp;</span><span class="ot">high_quality</span><span class="op">=</span><span class="st">1</span><span class="er">&quot;</span><span class="ot"> frameborder</span><span class="op">=</span><span class="st">&quot;no&quot;</span><span class="ot"> scrolling</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="ot"> allowfullscreen</span><span class="op">=</span><span class="st">&quot;allowfullscreen&quot;</span><span class="ot"> high_quality</span><span class="op">=</span><span class="st">&quot;1&quot;</span><span class="ot"> framespacing</span><span class="op">=</span><span class="st">&quot;1&quot;</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;video&quot;</span><span class="ot"> </span><span class="dt">&gt;</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;meta-media&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;iframe</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;{{ .Get &quot;</span><span class="er">src&quot;</span> <span class="er">}}&amp;high_quality</span><span class="ot">=</span><span class="st">1</span><span class="er">&quot;</span> <span class="er">frameborder</span><span class="ot">=</span><span class="st">&quot;no&quot;</span> <span class="er">scrolling</span><span class="ot">=</span><span class="st">&quot;yes&quot;</span> <span class="er">allowfullscreen</span><span class="ot">=</span><span class="st">&quot;allowfullscreen&quot;</span> <span class="er">high_quality</span><span class="ot">=</span><span class="st">&quot;1&quot;</span> <span class="er">framespacing</span><span class="ot">=</span><span class="st">&quot;1&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;video&quot;</span> <span class="kw">&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/iframe&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span></code></pre></div>
 </section>
 
 <section id="使用front-matter进行内容属性的设置"
@@ -796,9 +787,332 @@ Resonance）</strong>：品牌共鸣是建立在前三个构建块之上的最�
 <p>探讨技术进步、用户需求变化和社会发展趋势如何影响未来的媒介融合策略。</p>
 </section>
 </section>
+<section>
+<section id="短视频新闻" class="title-slide slide level1">
+<h1>短视频新闻</h1>
+
+</section>
+<section id="短视频新闻的重要性" class="title-slide slide level2">
+<h2>短视频新闻的重要性</h2>
+<ul>
+<li>快速获取信息的主要方式之一</li>
+<li>对年轻人群体特别受欢迎</li>
+<li>利用视觉冲击力和紧凑的信息传递</li>
+<li>快速、直观、易于分享</li>
+</ul>
+</section>
+
+<section id="制作和编辑短视频新闻" class="title-slide slide level2">
+<h2>制作和编辑短视频新闻</h2>
+
+</section>
+<section id="学习目标" class="title-slide slide level3">
+<h3>学习目标</h3>
+<ul>
+<li>理解短视频新闻的特点</li>
+<li>学习吸引目标观众的技巧</li>
+<li>保持新闻客观性和准确性</li>
+<li>增强新闻的吸引力和观看体验</li>
+</ul>
+</section>
+
+<section id="策略" class="title-slide slide level3">
+<h3>策略</h3>
+<ul>
+<li>使用视觉和音频元素增强表现</li>
+<li>紧凑的内容编辑以减少认知负荷</li>
+<li>利用故事讲述技巧提高参与度</li>
+</ul>
+</section>
+
+
+<section id="短视频新闻的代表性生产平台"
+class="title-slide slide level2">
+<h2>短视频新闻的代表性生产平台</h2>
+
+</section>
+<section id="主要平台" class="title-slide slide level3">
+<h3>主要平台</h3>
+<ul>
+<li>抖音</li>
+<li>快手</li>
+<li>B站</li>
+</ul>
+</section>
+
+<section id="平台特点和工具" class="title-slide slide level3">
+<h3>平台特点和工具</h3>
+<ul>
+<li>提供创作工具和功能</li>
+<li>滤镜、音乐、特效等增强表达力</li>
+</ul>
+</section>
+
+<section id="制作策略" class="title-slide slide level3">
+<h3>制作策略</h3>
+<ul>
+<li>选择适合内容的功能和工具</li>
+<li>利用平台特性吸引目标观众</li>
+</ul>
+</section>
+
+
+<section id="短视频新闻的分发平台" class="title-slide slide level2">
+<h2>短视频新闻的分发平台</h2>
+
+</section>
+<section id="分发的重要性" class="title-slide slide level3">
+<h3>分发的重要性</h3>
+<ul>
+<li>广泛传播渠道</li>
+<li>达到最大观众覆盖面和参与度</li>
+</ul>
+</section>
+
+<section id="分发策略" class="title-slide slide level3">
+<h3>分发策略</h3>
+<ul>
+<li>选择合适的社交媒体平台</li>
+<li>定位目标观众</li>
+<li>利用算法和社交网络特性</li>
+</ul>
+</section>
+
+<section id="优化传播" class="title-slide slide level3">
+<h3>优化传播</h3>
+<ul>
+<li>根据平台优化视频格式和内容</li>
+<li>使用标签和关键词提高可见性</li>
+<li>互动与观众以增加参与度</li>
+</ul>
+</section>
+
+
+<section id="小节-1" class="title-slide slide level2">
+<h2>小节</h2>
+<ul>
+<li>短视频新闻在移动传播时代占据重要地位</li>
+<li>有效的制作、编辑和分发策略对成功至关重要</li>
+</ul>
+</section>
+</section>
+<section>
+<section id="移动直播在新闻业的应用" class="title-slide slide level1">
+<h1>移动直播在新闻业的应用</h1>
+
+</section>
+<section id="移动直播给新闻业带来的机遇"
+class="title-slide slide level2">
+<h2>移动直播给新闻业带来的机遇</h2>
+<ul>
+<li>实时传播：移动直播使新闻报道能够实现<strong>实时传播</strong>，加强了观众的参与感和互动性。</li>
+<li>快速响应：记者可以通过移动直播<strong>快速响应</strong>事件，提供第一手的现场报道。</li>
+<li>增加透明度：探讨如何利用移动直播<strong>增加新闻的透明度</strong>。</li>
+<li>提高信息获取效率：如何通过移动直播<strong>提高公众的信息获取效率</strong>。</li>
+<li>创造新的互动方式：利用移动直播<strong>创造新的受众互动方式</strong>。</li>
+</ul>
+</section>
+<section id="实际案例" class="title-slide slide level3">
+<h3>实际案例</h3>
+<ul>
+<li>描述一次成功的移动直播新闻事件，分析其成功因素。</li>
+</ul>
+</section>
+
+
+<section id="移动直播如何讲故事" class="title-slide slide level2">
+<h2>移动直播如何讲故事</h2>
+<ul>
+<li>移动直播作为讲述故事的平台，需要记者具备<strong>现场适应能力</strong>、<strong>故事讲述技巧</strong>和<strong>技术操作能力</strong>。</li>
+<li>构建故事线：教授学生如何在直播过程中<strong>构建故事线</strong>，利用直播的互动特性来增强故事的吸引力。</li>
+<li>处理突发情况：讨论如何在直播中<strong>处理突发情况</strong>，保证信息的准确性和及时性。</li>
+</ul>
+</section>
+<section id="讲故事技巧" class="title-slide slide level3">
+<h3>讲故事技巧</h3>
+<ul>
+<li>通过具体示例展示如何在直播中有效讲述故事。</li>
+</ul>
+</section>
+
+
+<section id="移动直播的交互方式" class="title-slide slide level2">
+<h2>移动直播的交互方式</h2>
+<ul>
+<li>移动直播的<strong>强大互动性</strong>：观众可以通过评论、点赞和分享等方式与直播互动。</li>
+<li>激发和管理观众的互动：学习如何<strong>激发和管理观众的互动</strong>。</li>
+<li>引入观众反馈：如何在直播中<strong>引入观众的反馈</strong>。</li>
+<li>提升参与度和忠诚度：利用互动来<strong>提升直播的参与度和观众忠诚度</strong>。</li>
+</ul>
+</section>
+
+<section id="小结" class="title-slide slide level2">
+<h2>小结</h2>
+<ul>
+<li>移动直播为新闻业带来的前所未有的机遇，通过有效利用这一工具，可以提升新闻报道的质量和影响力。</li>
+<li>记者需要掌握相应的技能和策略，以应对直播过程中可能遇到的挑战，并最大化直播的教育和信息传播效果。</li>
+<li>移动直播的成功依赖于技术、内容和互动的有效结合，这需要记者和新闻机构不断探索和创新。</li>
+</ul>
+</section>
+</section>
+<section>
+<section id="融合新闻选题策划" class="title-slide slide level1">
+<h1>融合新闻选题策划</h1>
+
+</section>
+<section id="融合新闻的特点-1" class="title-slide slide level2">
+<h2>融合新闻的特点</h2>
+
+</section>
+<section id="融合新闻的定义-1" class="title-slide slide level3">
+<h3>融合新闻的定义</h3>
+<ul>
+<li>结合不同媒介形式（如文字、图片、音频、视频）的新闻报道</li>
+<li>创造更为丰富和互动的受众体验</li>
+</ul>
+</section>
+
+<section id="融合新闻的重要性" class="title-slide slide level3">
+<h3>融合新闻的重要性</h3>
+<ul>
+<li>提升新闻内容的吸引力和传播效率</li>
+<li>满足数字化时代受众的多样化需求</li>
+</ul>
+</section>
+
+<section id="融合新闻在选题策划中的作用"
+class="title-slide slide level3">
+<h3>融合新闻在选题策划中的作用</h3>
+<ul>
+<li>通过多媒介整合，增强新闻报道的深度和广度</li>
+<li>为受众提供更为全面和立体的信息</li>
+</ul>
+</section>
+
+
+<section id="融合新闻选题策划的基本原则"
+class="title-slide slide level2">
+<h2>融合新闻选题策划的基本原则</h2>
+
+</section>
+<section id="跨媒介的新闻价值" class="title-slide slide level3">
+<h3>跨媒介的新闻价值</h3>
+<ul>
+<li>考虑新闻内容在不同媒介的表现力和影响力</li>
+<li>融合新闻的独特性在于多媒介的互补和互动</li>
+</ul>
+</section>
+
+<section id="用户参与和互动性" class="title-slide slide level3">
+<h3>用户参与和互动性</h3>
+<ul>
+<li>鼓励受众参与新闻内容的创造和传播</li>
+<li>融合新闻应注重互动性，提升受众体验</li>
+</ul>
+</section>
+
+<section id="技术应用的合理性" class="title-slide slide level3">
+<h3>技术应用的合理性</h3>
+<ul>
+<li>选题策划时考虑技术实现的可行性和创新性</li>
+<li>技术应服务于内容，而非单纯追求技术展示</li>
+</ul>
+</section>
+
+
+<section id="融合新闻选题策划的技巧与方法"
+class="title-slide slide level2">
+<h2>融合新闻选题策划的技巧与方法</h2>
+
+</section>
+<section id="多媒介内容的整合" class="title-slide slide level3">
+<h3>多媒介内容的整合</h3>
+<ul>
+<li>如何将文字、图片、音频、视频等有机结合</li>
+<li>案例分析：成功的融合新闻报道</li>
+</ul>
+</section>
+
+<section id="故事叙述的创新" class="title-slide slide level3">
+<h3>故事叙述的创新</h3>
+<ul>
+<li>运用多种叙述手法，增强故事的吸引力</li>
+<li>互动性故事讲述的技巧</li>
+</ul>
+</section>
+
+<section id="受众分析与定位" class="title-slide slide level3">
+<h3>受众分析与定位</h3>
+<ul>
+<li>了解不同媒介受众的特点</li>
+<li>根据受众需求进行有针对性的选题策划</li>
+</ul>
+</section>
+
+
+<section id="技术在融合新闻选题策划中的应用"
+class="title-slide slide level2">
+<h2>技术在融合新闻选题策划中的应用</h2>
+
+</section>
+<section id="交互设计的工具与平台" class="title-slide slide level3">
+<h3>交互设计的工具与平台</h3>
+<ul>
+<li>介绍常用的交互设计软件和在线工具</li>
+<li>分析如何利用这些工具进行新闻内容的创新设计</li>
+</ul>
+</section>
+
+<section id="数据可视化" class="title-slide slide level3">
+<h3>数据可视化</h3>
+<ul>
+<li>数据新闻的概念和重要性</li>
+<li>利用数据可视化工具增强信息传递的效率和吸引力</li>
+</ul>
+</section>
+
+<section id="社交媒体的融合策略" class="title-slide slide level3">
+<h3>社交媒体的融合策略</h3>
+<ul>
+<li>如何在社交媒体上进行有效的新闻融合传播</li>
+<li>社交媒体平台的选题策划特点和技巧</li>
+</ul>
+</section>
+
+
+<section id="融合新闻选题策划的实践操作"
+class="title-slide slide level2">
+<h2>融合新闻选题策划的实践操作</h2>
+
+</section>
+<section id="实践操作的步骤" class="title-slide slide level3">
+<h3>实践操作的步骤</h3>
+<ul>
+<li>从选题到发布的全流程指导</li>
+<li>融合新闻项目的规划和管理</li>
+</ul>
+</section>
+
+<section id="团队协作与分工" class="title-slide slide level3">
+<h3>团队协作与分工</h3>
+<ul>
+<li>不同专业技能在融合新闻制作中的协作</li>
+<li>明确团队成员的角色和职责</li>
+</ul>
+</section>
+
+<section id="评估与反馈" class="title-slide slide level3">
+<h3>评估与反馈</h3>
+<ul>
+<li>如何评估融合新闻的效果</li>
+<li>收集受众反馈，不断优化选题策划</li>
+</ul>
+</section>
+
+</section>
 <section id="the-end" class="title-slide slide level1">
 <h1>THE END</h1>
-<p>更新日期：2024-03-15</p>
+<p>更新日期：2024-04-07</p>
 </section>
     </div>
   </div>

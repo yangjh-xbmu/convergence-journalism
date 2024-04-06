@@ -6,7 +6,7 @@
     "label": "build",
     "type": "shell",
     // "command": "pandoc --mathjax -t revealjs -s --css imd.css --highlight-style haddock --include-in-header=favicon.html --include-after-body=dev.html  --slide-level=5 title.md intro.md user-research.md acp.md interactive-media-design.md -o index.html",
-    "command": "pandoc --mathjax -t revealjs -s --css imd.css --highlight-style haddock --include-in-header=favicon.html --include-after-body=dev.html  --slide-level=5 title.md 媒介融合.md 融合新闻.md hugo.md 新媒体思维.md -o index.html",
+    "command": "pandoc --mathjax -t revealjs -s --css imd.css --highlight-style haddock --include-in-header=favicon.html --include-after-body=dev.html  --slide-level=5 title.md 媒介融合.md 融合新闻.md hugo.md 新媒体思维.md 短视频新闻.md 移动直播.md 选题策划.md -o index.html",
     "group": {
       "kind": "build",
       "isDefault": true
